@@ -1,0 +1,354 @@
+.nitro-friends-spritesheet {
+    background: url('@/assets/images/friends/friends-spritesheet.png') transparent no-repeat;
+    
+    &.icon-friendbar-visit {
+        width: 21px; height: 21px;
+        background-position: -38px -5px;
+    }
+    
+    &.icon-heart {
+        width: 16px; height: 14px;
+        background-position: -5px -67px;
+    }
+    
+    &.icon-new-message {
+        width: 14px; height: 14px;
+        background-position: -96px -53px;
+    }
+    
+    &.icon-none {
+        width: 16px; height: 14px;
+        background-position: -31px -67px;
+    }
+    
+    &.icon-profile {
+        width: 21px; height: 21px;
+        background-position: -5px -36px;
+    }
+    
+    &.icon-profile-sm {
+        width: 13px; height: 11px;
+        background-position: -51px -91px;
+
+        &:hover {
+            width: 13px; height: 11px;
+            background-position: -74px -91px;
+        }
+    }
+    
+    &.icon-smile {
+        width: 16px; height: 14px;
+        background-position: -57px -67px;
+    }
+    
+    &.icon-warning {
+        width: 23px; height: 21px;
+        background-position: -5px -5px;
+    }
+    
+    &.icon-accept {
+        width: 13px; height: 14px;
+        background-position: -5px -91px;
+    }
+    
+    &.icon-add {
+        width: 16px; height: 15px;
+        background-position: -69px -31px;
+    }
+    
+    &.icon-bobba {
+        width: 16px; height: 14px;
+        background-position: -96px -5px;
+    }
+    
+    &.icon-chat {
+        width: 17px; height: 16px;
+        background-position: -69px -5px;
+    }
+    
+    &.icon-deny {
+        width: 13px; height: 14px;
+        background-position: -28px -91px;
+    }
+    
+    &.icon-follow {
+        width: 16px; height: 14px;
+        background-position: -96px -29px;
+    }
+    
+    &.icon-friendbar-chat {
+        width: 20px; height: 21px;
+        background-position: -36px -36px;
+    }
+}
+
+.messenger-notification-icon {
+    background: url('@/assets/images/friends/messenger_notification_icon.png') transparent no-repeat;
+    width: 25px; height: 25px;
+}
+
+.nitro-friends {
+    width: $friends-list-width;
+    height: $friends-list-height;
+
+    .search-input {
+        border: 0;
+        border-bottom: 1px solid rgba($black, 0.2);
+    }
+}
+
+.nitro-friends-room-invite {
+    width: $friends-list-width;
+}
+
+.nitro-friends-remove-confirmation {
+    width: $friends-list-width;
+}
+
+.friend-bar {
+    position: relative; /* Ensure child elements are positioned correctly */
+    display: flex; /* Align items horizontally if needed */
+
+    .friend-bar-item {
+        width: 130px;
+        margin: 0 3px;
+        position: relative;
+        padding-left: 38px;
+        text-align: left;
+        border: 1px solid #ffffff;
+        transition: all .2s ease;
+
+        &.friend-bar-item-active {
+            /* Styles for active state */
+        }
+
+        &.friend-bar-search-item-active {
+            margin-bottom:10.5em;
+			background-color: #b69b83;
+			border: 2px solid #e2c1a3;
+        }
+
+        &:hover .friend-bar-item-head {
+            /*pointer-events:none;
+            height: 84px !important;
+            
+            &.avatar {
+
+                .avatar-image{
+                    height: 100px !important;
+                }
+            }*/
+        }
+    
+        &.friend-bar-search {
+            .friend-bar-item-head {
+                pointer-events:none;
+                top: -3px;
+                left: 5px;
+                width: 31px;
+                height: 34px;
+                background-image: url('@/assets/images/toolbar/friend-search.png');
+            } 
+        }
+    }
+}
+
+.friend-bar-search-item-find {
+    position: absolute;
+    right: 100%;
+    top: 0;
+    transform: translateX(-10px); /* Adjust as needed for spacing */
+    background-color: rgba(0, 0, 0, 0.6); /* Black with 60% opacity */
+    z-index: 3;
+    width: 250px;
+	height: 75px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: opacity 0.2s ease-in-out;
+    opacity: 1;
+}
+
+.nitro-friends-messenger {
+    width: $messenger-width;
+    height: $messenger-height;
+
+    .layout-grid-item {
+        height: 50px;
+    }
+
+    .friend-head {
+        width: 50px;
+        height: 45px;
+        overflow: hidden;
+
+        .avatar-image {
+            margin-top: 90px;
+        }
+    }
+
+    .open-chat-entry {
+        position: relative;
+        border: 2px solid;
+        border-color: $light;
+
+        &.active {
+            border-color: #fffde9;
+            background-color: #ececec
+        }
+
+        .friend-head {
+            width: 45px;
+            height: 45px;
+            overflow: hidden;
+    
+            .avatar-image {
+                position: absolute;
+                margin-left: -27px;
+                margin-top: -27px;
+            }
+        }
+    }
+
+    .chat-title {
+        margin-top: -21px;
+    }
+
+    .chat-messages {
+        overflow-y: auto;
+
+        .message-avatar {
+            position: relative;
+            overflow: hidden;
+            width: 50px;
+            height: 50px;
+
+            .avatar-image {
+                position: absolute;
+                margin-left: -22px;
+                margin-top: -25px;
+            }
+        }
+
+        .messages-group-left {
+            position: relative;
+            
+            &:before {
+                position: absolute;
+                content: ' ';
+                width: 0;
+                height: 0;
+                border-right: 8px solid rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important;
+                border-top: 8px solid transparent;
+                border-bottom: 8px solid transparent;
+                top: 10px;
+                left: -8px;
+            }
+        }
+
+        .messages-group-right {
+            position: relative;
+            
+            &:before {
+                position: absolute;
+                content: ' ';
+                width: 0;
+                height: 0;
+                border-left: 8px solid rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important;
+                border-top: 8px solid transparent;
+                border-bottom: 8px solid transparent;
+                top: 10px;
+                right: -8px;
+            }
+        }
+    }
+}
+
+.image-friendzone{
+    height: 80px !important;
+    transition: 0.5s;
+    top: -21px;
+    right: 12px;
+}
+
+.nitro-chat-emoji-selector-container {
+    width: $chat-input-sticker-emoji-widget-width !important;
+    max-height: $chat-input-sticker-emoji-widget-height;
+    max-width: 365px;
+
+
+    .content-area {
+        max-height: $chat-input-sticker-emoji-widget-height !important;
+    }
+
+    .bubble-parent-container {
+        height: 30px;
+
+        .bubble-container {
+            position: relative;
+            width: 50px;
+        }
+    }
+}
+
+.nitro-chat-avatar-card-online{
+    background-color: #67B645;
+    border: 2px #919191 solid;
+	width: 58px;
+    height: 58px;
+    border-radius: 29px;
+	box-shadow:
+    0 0 10px 5px #0ff,
+    0 0 10px 5px #67B645,
+    0 0 20px 5px #000;
+}
+
+.nitro-chat-avatar-card{
+    background-color: #383838;
+    border: 2px #919191 solid;
+	width: 58px;
+    height: 58px;
+    border-radius: 29px;
+	box-shadow:
+    0 0 10px 5px #0ff,
+    0 0 10px 5px #737373,
+    0 0 20px 5px #000;
+}
+
+.nitro-chat-avatar-image{
+    position: absolute;
+    top: 8px;
+    left: 3px;
+}
+
+.nitro-chat-avatar-image-search{
+    position: absolute;
+    top: 7px;
+    left: 10px;
+}
+
+.nitro-chat-avatar-card-feed{
+    background-color: rgba(24, 24, 24, 0.6);
+    border: 1px #363636 solid;
+    padding: 25px;
+    border-radius: 33px;
+    position: relative;
+}
+
+.nitro-chat-avatar-image-feed{
+    position: absolute;
+    top: -14px;
+    left: -8px;
+}
+
+.nitro-chat-avatar-image-feed-comment{
+    position: absolute;
+    top: -14px;
+    left: -4px;
+}
+
+.friendbarview {
+    padding: 0px;
+    width: 77px;
+    margin-top: -334px;
+    margin-left: 10px;
+    margin-right: -12px;
+}
